@@ -1,5 +1,9 @@
 # web3-secret-lit-protocol
+
 Como armazenar dados secretos em Bases de dados Publicas?
+
+
+<img src="banner.svg" alt="web3-secret-lit-protocol banner" width="100%" />
 
 **Como armazenar dados secretos em Bancos de Dados Públicos via Web3 e Lit Protocol**
 
