@@ -7,16 +7,16 @@ Como armazenar dados secretos em Bases de dados Publicas?
 
 ```mermaid
 flowchart TD
-    A[Usuário conecta carteira Web3] --> B[Assina mensagem para autenticação]
+    A[Usuario conecta carteira Web3] --> B[Assina mensagem para autenticacao]
     B --> C[Envia segredo (ex: chave API WhatsApp)]
     C --> D[Criptografa segredo localmente (AES-256)]
     D --> E[Criptografa chave simétrica via Lit Protocol]
-    E --> F[Armazena segredo criptografado em banco público (IPFS, Arweave, etc)]
+    E --> F[Armazena segredo criptografado em banco publico IPFS, Arweave, etc]
     G[Usuário deseja acessar segredo] --> H[Solicita descriptografia]
-    H --> I[Assina transação/autenticação wallet]
+    H --> I[Assina transação/autenticacao wallet]
     I --> J[Lit Protocol verifica assinatura]
-    J --> K[Recupera chave simétrica]
-    K --> L[Descriptografa segredo e disponibiliza ao usuário]
+    J --> K[Recupera chave simetrica]
+    K --> L[Descriptografa segredo e disponibiliza ao usuario]
 ```
 
 O `web3-secret-lit-protocol` é um projeto open source que demonstra como guardar informação sensível—como chaves de API do WhatsApp—em bases públicas, usando criptografia baseada em assinaturas de carteiras Web3.
