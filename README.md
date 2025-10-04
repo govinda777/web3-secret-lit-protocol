@@ -8,8 +8,8 @@ Como armazenar dados secretos em Bases de dados Publicas?
 ```mermaid
 flowchart TD
     A[Usuario conecta carteira Web3] --> B[Assina mensagem para autenticacao]
-    B --> C[Envia segredo (ex: chave API WhatsApp)]
-    C --> D[Criptografa segredo localmente (AES-256)]
+    B --> C[Envia segredo ex: chave API WhatsApp]
+    C --> D[Criptografa segredo localmente AES-256]
     D --> E[Criptografa chave simétrica via Lit Protocol]
     E --> F[Armazena segredo criptografado em banco publico IPFS, Arweave, etc]
     G[Usuário deseja acessar segredo] --> H[Solicita descriptografia]
