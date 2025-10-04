@@ -6,17 +6,43 @@ Como armazenar dados secretos em Bases de dados Publicas?
 ## Visão Geral
 
 ```mermaid
-flowchart TD
-    A[Usuario conecta carteira Web3] --> B[Assina mensagem para autenticacao]
-    B --> C[Envia segredo ex: chave API WhatsApp]
-    C --> D[Criptografa segredo localmente AES-256]
-    D --> E[Criptografa chave simétrica via Lit Protocol]
-    E --> F[Armazena segredo criptografado em banco publico IPFS, Arweave, etc]
-    G[Usuário deseja acessar segredo] --> H[Solicita descriptografia]
-    H --> I[Assina transação/autenticacao wallet]
-    I --> J[Lit Protocol verifica assinatura]
-    J --> K[Recupera chave simetrica]
-    K --> L[Descriptografa segredo e disponibiliza ao usuario]
+sequenceDiagram
+    participant U as Usuario
+    participant W as Wallet Web3
+    participant A as Aplicacao
+    participant L as Lit Protocol
+    participant S as Storage Publico
+
+    Note over U,S: Processo de Armazenamento
+    U->>W: Conecta carteira
+    W->>A: Endereco da wallet
+    U->>A: Fornece segredo API WhatsApp
+    A->>A: Gera chave simetrica AES-256
+    A->>A: Criptografa segredo com chave simetrica
+    A->>W: Solicita assinatura para autenticacao
+    W->>U: Solicita confirmacao de assinatura
+    U->>W: Confirma assinatura
+    W->>A: Retorna assinatura
+    A->>L: Envia chave simetrica + condicoes de acesso
+    L->>L: Criptografa chave com threshold cryptography
+    L->>A: Retorna chave criptografada
+    A->>S: Armazena segredo criptografado + metadados
+    S->>A: Confirma armazenamento
+
+    Note over U,S: Processo de Recuperacao
+    U->>A: Solicita acesso ao segredo
+    A->>W: Solicita nova assinatura
+    W->>U: Solicita confirmacao
+    U->>W: Confirma assinatura
+    W->>A: Retorna assinatura
+    A->>S: Busca segredo criptografado
+    S->>A: Retorna dados criptografados
+    A->>L: Solicita descriptografia da chave + assinatura
+    L->>L: Verifica assinatura e condicoes
+    L->>A: Retorna chave simetrica descriptografada
+    A->>A: Descriptografa segredo com chave simetrica
+    A->>U: Fornece segredo descriptografado
+
 ```
 
 O `web3-secret-lit-protocol` é um projeto open source que demonstra como guardar informação sensível—como chaves de API do WhatsApp—em bases públicas, usando criptografia baseada em assinaturas de carteiras Web3.
