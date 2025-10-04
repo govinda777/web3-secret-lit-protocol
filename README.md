@@ -1,12 +1,6 @@
 # web3-secret-lit-protocol
 Como armazenar dados secretos em Bases de dados Publicas?
 
-Segue um exemplo de README.md profissional para seu projeto **web3-secret-lit-protocol**, focado em *armazenamento seguro de dados secretos em bases públicas*, utilizando Lit Protocol e abordagem Web3.
-
-***
-
-# web3-secret-lit-protocol
-
 **Como armazenar dados secretos em Bancos de Dados Públicos via Web3 e Lit Protocol**
 
 ## Visão Geral
