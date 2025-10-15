@@ -13,3 +13,20 @@ states/
 # Optional
 .env
 .env.local
+
+node_modules
+
+# Hardhat files
+web3-secret-hardhat/cache
+web3-secret-hardhat/artifacts
+
+# TypeChain files
+web3-secret-hardhat/typechain
+web3-secret-hardhat/typechain-types
+
+# solidity-coverage files
+web3-secret-hardhat/coverage
+web3-secret-hardhat/coverage.json
+
+# Hardhat Ignition default folder for deployments against a local node
+ignition/deployments/chain-31337
