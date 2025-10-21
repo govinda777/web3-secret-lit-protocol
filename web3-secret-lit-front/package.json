@@ -1,0 +1,33 @@
+{
+  "name": "web3-secret-lit-front",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@lit-protocol/auth-helpers": "^7.3.1",
+    "@lit-protocol/constants": "^7.3.1",
+    "@lit-protocol/encryption": "^7.3.1",
+    "@lit-protocol/lit-node-client": "^7.3.1",
+    "@web3-storage/w3up-client": "^17.3.0",
+    "dids": "^5.0.3",
+    "ethers": "^6.15.0",
+    "next": "^15.5.4",
+    "nft.storage": "^7.2.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "siwe": "^3.0.0",
+    "web3.storage": "^4.5.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
